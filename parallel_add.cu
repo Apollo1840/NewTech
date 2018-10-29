@@ -6,7 +6,7 @@ __global__
 void add(int n, float *x, float *y)
 {
   int index = threadIdx.x;
-  int stride = blockDim.x;
+  int stride = blockDim.x; // how big is one thread
   for (int i = index; i < n; i += stride)
       y[i] = x[i] + y[i];
 }
